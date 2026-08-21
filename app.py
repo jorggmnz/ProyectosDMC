@@ -47,11 +47,11 @@ valor = st.number_input("Valor", min_value=0.0)
     #st.metric("Total Gastos", total_gastos)
     #st.metric("Saldo Final", saldo)
 
-    """if saldo >= 0:
-        st.success("El flujo de caja está A FAVOR")
-    else:
-        st.error("El flujo de caja está EN CONTRA")
-"""
+    #if saldo >= 0:
+        #st.success("El flujo de caja está A FAVOR")
+    #else:
+        #st.error("El flujo de caja está EN CONTRA")
+
   # Descripción breve
   Ingresos = st.number_input("Ingresos")
   Gastos = st.number_input("Gastos")
