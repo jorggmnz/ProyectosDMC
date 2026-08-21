@@ -43,7 +43,7 @@ if modulos == "Ejercicio 1: Listas":
     valor = st.number_input("Valor", min_value=0.0)
 
     # Botón para registrar en la lista
-    if st.button("Agregar movimiento"):
+  if st.button("Agregar movimiento"):
         st.session_state.movimientos.append({
             "Concepto": concepto,
             "Tipo": tipo,
@@ -64,9 +64,9 @@ if modulos == "Ejercicio 1: Listas":
     st.metric("Saldo Final", saldo)
 
     # Indicador del flujo
-    if saldo >= 0:
+  if saldo >= 0:
         st.success("El flujo de caja está A FAVOR")
-    else:
+  else:
         st.error("El flujo de caja está EN CONTRA")
 
   # Descripción breve
