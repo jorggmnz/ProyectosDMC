@@ -1,9 +1,9 @@
 import streamlit as st
 import numpy as np
 
-st.title("Especialización Python for Analytics")
+st.title("Proyecto aplicado N°1 de Python for Analytics")
 st.sidebar.title("Parámetros")
-st.write("Elaborado por: Jorge Muñoz")
+st.write("Elaborado por: Jorge Enrique Muñoz Ccasa")
 
 st.image("Python_logo.png", width=200)
 st.sidebar.image("DMC.png", width=100)
