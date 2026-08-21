@@ -33,7 +33,7 @@ if modulos == "Ejercicio 1: Listas":
   st.write("Bienvenido al módulo Listas")
   st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
 
-concepto = st.number_input("Concepto")
+concepto = st.text_input("Concepto")
 tipo = st.selectbox("Tipo de movimiento", ["Ingresos", "Gastos"])  
 valor = st.number_input("Valor", min_value=0.0)
 
