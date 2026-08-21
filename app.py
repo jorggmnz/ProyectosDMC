@@ -1,14 +1,11 @@
 import streamlit as st
 import numpy as np
 
-st.title("Proyecto aplicado N°1 de Python for Analytics")
+st.title("Proyecto aplicado N°1")
 st.sidebar.title("Parámetros")
 
-st.write("Elaborado por: Jorge Enrique Muñoz Ccasa")
-st.write("Módulo: N°1 de Python Fundamentals")
-st.write("Año: 2026")
-
 st.subheader("Información General del Estudiante")
+st.write("**Elaborado por:** Jorge Enrique Muñoz Ccasa")
 st.write("**Carrera:** Estadística")
 st.write("**Universidad:** Universidad Nacional Mayor de San Marcos")
 
@@ -20,6 +17,9 @@ del módulo 1 Python for Analytics
 st.markdown("""
 Las tecnologías empleadas en esto es 
 """)
+
+st.write("Módulo: N°1 de Python Fundamentals")
+st.write("Año: 2026")
 
 # Separador visual
 st.divider()
