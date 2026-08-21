@@ -35,7 +35,7 @@ st.markdown("### Ejercicio 1: Flujo de Caja")
 st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
 
 # Inicializar la lista guardada
-if "movimientos" not in st.session_state:
+  if "movimientos" not in st.session_state:
     st.session_state.movimientos = []
 
 # Inputs sencillos
@@ -44,7 +44,7 @@ tipo = st.selectbox("Tipo de movimiento", ["Ingreso", "Gasto"])
 valor = st.number_input("Valor", min_value=0.0)
 
 # Botón para agregar a la lista
-if st.button("Agregar"):
+  if st.button("Agregar"):
     st.session_state.movimientos.append({
         "Concepto": concepto,
         "Tipo": tipo,
@@ -65,9 +65,9 @@ st.metric("Total Gastos", total_gastos)
 st.metric("Saldo Final", saldo)
 
 # Estado del flujo de caja
-if saldo >= 0:
+  if saldo >= 0:
     st.success("El flujo de caja está A FAVOR")
-else:
+  else:
     st.error("El flujo de caja está EN CONTRA")
   
 elif modulos == "Ejercicio 2: Arreglos":
