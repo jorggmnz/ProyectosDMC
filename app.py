@@ -33,35 +33,25 @@ if modulos == "Ejercicio 1: Listas":
   st.write("Bienvenido al módulo Listas")
   st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
 
-if "movimientos" not in st.session_state:
-        st.session_state.movimientos = []
+concepto = st.number_input("Concepto")
+tipo = st.selectbox("Tipo de movimiento", ["Ingreso", "Gasto"])
+valor = st.number_input("Valor", min_value=0.0)
 
-    concepto = st.text_input("Concepto")
-    tipo = st.selectbox("Tipo de movimiento", ["Ingreso", "Gasto"])
-    valor = st.number_input("Valor", min_value=0.0)
+    #st.dataframe(pd.DataFrame(st.session_state.movimientos))
 
-    if st.button("Agregar movimiento"):
-        st.session_state.movimientos.append({
-            "Concepto": concepto,
-            "Tipo": tipo,
-            "Valor": valor
-        })
+    #total_ingresos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Ingresos")
+    #total_gastos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Gastos")
+    #saldo = total_ingresos - total_gastos
 
-    st.dataframe(pd.DataFrame(st.session_state.movimientos))
+    #st.metric("Total Ingresos", total_ingresos)
+    #st.metric("Total Gastos", total_gastos)
+    #st.metric("Saldo Final", saldo)
 
-    total_ingresos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Ingresos")
-    total_gastos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Gastos")
-    saldo = total_ingresos - total_gastos
-
-    st.metric("Total Ingresos", total_ingresos)
-    st.metric("Total Gastos", total_gastos)
-    st.metric("Saldo Final", saldo)
-
-    if saldo >= 0:
+    """if saldo >= 0:
         st.success("El flujo de caja está A FAVOR")
     else:
         st.error("El flujo de caja está EN CONTRA")
-
+"""
   # Descripción breve
   Ingresos = st.number_input("Ingresos")
   Gastos = st.number_input("Gastos")
