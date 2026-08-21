@@ -35,36 +35,14 @@ if modulos == "Ejercicio 1: Listas":
 
 concepto = st.number_input("Concepto")
 tipo = st.selectbox("Tipo de movimiento", ["Ingreso", "Gasto"])
+  Descripción breve
+  Ingresos = st.number_input("Ingresos")
+  Gastos = st.number_input("Gastos")
 valor = st.number_input("Valor", min_value=0.0)
 
-elif modulos == "Ejercicio 2: Arreglos con Numpy":
-  
-  st.write("Bienvenido al módulo de Arreglos")
-  
-  cantidad_elementos = st.slider("Selecione la cantidad de elementos de su arreglo", 1,100)
-  cantidad_arreglo= np.arange(cantidad_elementos)
-  st.write(cantidad_arreglo)
+  lista_numeros = list(range(int(valor_inicial), int(valor_final)))
+  st.write(lista_numeros)
 
-else:
-  
-  st.write("Bienvenido al módulo de Ejercicio 3: Funciones")
-    #st.dataframe(pd.DataFrame(st.session_state.movimientos))
 
-    #total_ingresos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Ingresos")
-    #total_gastos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Gastos")
-    #saldo = total_ingresos - total_gastos
-
-    #st.metric("Total Ingresos", total_ingresos)
-    #st.metric("Total Gastos", total_gastos)
-    #st.metric("Saldo Final", saldo)
-
-    #if saldo >= 0:
-        #st.success("El flujo de caja está A FAVOR")
-    #else:
-        #st.error("El flujo de caja está EN CONTRA")
-
-  # Descripción breve
-  #Ingresos = st.number_input("Ingresos")
-  #Gastos = st.number_input("Gastos")
   
 
