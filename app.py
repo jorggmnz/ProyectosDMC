@@ -14,6 +14,7 @@ st.write("**Universidad:** Universidad Nacional Mayor de San Marcos")
 
 # Separador visual
 st.divider()
+
 st.markdown("""Esta aplicación permite poner en practica todo lo aprendido y desarrollado en las primeras clases
 del módulo 1 Python for Analytics """)
 st.markdown(""" Las tecnologías empleadas en esto es """)
