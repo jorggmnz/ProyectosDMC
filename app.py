@@ -9,9 +9,17 @@ st.write("Módulo: N°1 de Python Fundamentals")
 st.write("Año: 2026")
 
 st.subheader("Información General del Estudiante")
-st.write("**Carrera:** Estadítica")
+st.write("**Carrera:** Estadística")
 st.write("**Universidad:** Universidad Nacional Mayor de San Marcos")
 
+st.markdown("""
+Esta aplicación permite poner en practica todo lo aprendido y desarrollado en las primeras clases
+del módulo 1 Python for Analytics 
+""")
+
+st.markdown("""
+Las tecnologías empleadas en esto es 
+""")
 
 # Separador visual
 st.divider()
