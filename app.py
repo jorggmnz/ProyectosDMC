@@ -4,6 +4,8 @@ import numpy as np
 st.title("Proyecto aplicado N°1 de Python for Analytics")
 st.sidebar.title("Parámetros")
 st.write("Elaborado por: Jorge Enrique Muñoz Ccasa")
+st.write("Módulo: N°1 de Python Fundamentals")
+st.write("Año: 2026")
 
 st.image("Python_logo.png", width=200)
 st.sidebar.image("DMC.png", width=100)
