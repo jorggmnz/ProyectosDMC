@@ -30,45 +30,11 @@ modulos = st.sidebar.selectbox ("Selecione un módulo", ["Ejercicio 1: Listas", 
 if modulos == "Ejercicio 1: Listas":
   
   st.write("Bienvenido al módulo Listas")
-# Descripción breve
-st.markdown("### Ejercicio 1: Flujo de Caja")
-st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
+  st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
 
-# Inicializar la lista guardada
-  if "movimientos" not in st.session_state:
-    st.session_state.movimientos = []
-
-# Inputs sencillos
-concepto = st.text_input("Concepto")
-tipo = st.selectbox("Tipo de movimiento", ["Ingreso", "Gasto"])
-valor = st.number_input("Valor", min_value=0.0)
-
-# Botón para agregar a la lista
-  if st.button("Agregar"):
-    st.session_state.movimientos.append({
-        "Concepto": concepto,
-        "Tipo": tipo,
-        "Valor": valor
-    })
-
-# Tabla de movimientos
-st.dataframe(pd.DataFrame(st.session_state.movimientos))
-
-# Cálculos directos
-total_ingresos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Ingreso")
-total_gastos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Gasto")
-saldo = total_ingresos - total_gastos
-
-# Resultados requeridos
-st.metric("Total Ingresos", total_ingresos)
-st.metric("Total Gastos", total_gastos)
-st.metric("Saldo Final", saldo)
-
-# Estado del flujo de caja
-  if saldo >= 0:
-    st.success("El flujo de caja está A FAVOR")
-  else:
-    st.error("El flujo de caja está EN CONTRA")
+  # Descripción breve
+  valor_inicial = st.number_input("Ingrese el valor inicial")
+  valor_final = st.number_input("Ingrese el valor final")
   
 elif modulos == "Ejercicio 2: Arreglos":
   
