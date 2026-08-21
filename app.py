@@ -33,40 +33,33 @@ if modulos == "Ejercicio 1: Listas":
   st.write("Bienvenido al módulo Listas")
   st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
 
-  # Inicializar la lista en la sesión si no existe
-  if "movimientos" not in st.session_state:
+if "movimientos" not in st.session_state:
         st.session_state.movimientos = []
 
-    # Widgets para ingresar datos
     concepto = st.text_input("Concepto")
     tipo = st.selectbox("Tipo de movimiento", ["Ingreso", "Gasto"])
     valor = st.number_input("Valor", min_value=0.0)
 
-    # Botón para registrar en la lista
-  if st.button("Agregar movimiento"):
+    if st.button("Agregar movimiento"):
         st.session_state.movimientos.append({
             "Concepto": concepto,
             "Tipo": tipo,
             "Valor": valor
         })
 
-    # Mostrar la tabla con la lista de datos
     st.dataframe(pd.DataFrame(st.session_state.movimientos))
 
-    # Cálculos
     total_ingresos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Ingreso")
     total_gastos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Gasto")
     saldo = total_ingresos - total_gastos
 
-    # Mostrar resultados
     st.metric("Total Ingresos", total_ingresos)
     st.metric("Total Gastos", total_gastos)
     st.metric("Saldo Final", saldo)
 
-    # Indicador del flujo
-  if saldo >= 0:
+    if saldo >= 0:
         st.success("El flujo de caja está A FAVOR")
-  else:
+    else:
         st.error("El flujo de caja está EN CONTRA")
 
   # Descripción breve
