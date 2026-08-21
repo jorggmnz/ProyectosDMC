@@ -49,8 +49,8 @@ if "movimientos" not in st.session_state:
 
     st.dataframe(pd.DataFrame(st.session_state.movimientos))
 
-    total_ingresos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Ingreso")
-    total_gastos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Gasto")
+    total_ingresos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Ingresos")
+    total_gastos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Gastos")
     saldo = total_ingresos - total_gastos
 
     st.metric("Total Ingresos", total_ingresos)
