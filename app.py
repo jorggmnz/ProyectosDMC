@@ -24,9 +24,6 @@ st.markdown("""
 Las tecnologías empleadas en esto es 
 """)
 
-st.write("Módulo: N°1 de Python Fundamentals")
-st.write("Año: 2026")
-
 # Separador visual
 st.divider()
 
