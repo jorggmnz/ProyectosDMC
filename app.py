@@ -25,7 +25,7 @@ st.divider()
 st.image("Python_logo.png", width=200)
 st.sidebar.image("DMC.png", width=100)
 
-modulos = st.sidebar.selectbox ("Selecione un módulo", ["Módulo Listas", "Módulo Arreglos", "Módulo Funciones"])
+modulos = st.sidebar.selectbox ("Selecione un módulo", ["Ejercicio 1: Listas", "Ejercicio 2: Arreglos con Numpy", "Ejercicio 3: Funciones", "Ejercicio 4: CRUD"])
 
 if modulos == "Módulo Listas":
   
