@@ -37,13 +37,14 @@ concepto = st.number_input("Concepto")
 tipo = st.selectbox("Tipo de movimiento", ["Ingreso", "Gasto"])
 valor = st.number_input("Valor", min_value=0.0)
 
-elif modulos == "Ejercicio 2: Arreglos":
+elif modulos == "Ejercicio 2: Arreglos con Numpy":
   
   st.write("Bienvenido al módulo de Arreglos")
   
   cantidad_elementos = st.slider("Selecione la cantidad de elementos de su arreglo", 1,100)
   cantidad_arreglo= np.arange(cantidad_elementos)
   st.write(cantidad_arreglo)
+
 else:
   
   st.write("Bienvenido al módulo de Ejercicio 3: Funciones")
