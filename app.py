@@ -1,5 +1,6 @@
 import streamlit as st
 import numpy as np
+import pandas as pd
 
 st.title("Proyecto aplicado N°1")
 st.write("Módulo: N°1 de Python Fundamentals")
@@ -33,7 +34,7 @@ if modulos == "Ejercicio 1: Listas":
   st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
 
   # Inicializar la lista en la sesión si no existe
-    if "movimientos" not in st.session_state:
+  if "movimientos" not in st.session_state:
         st.session_state.movimientos = []
 
     # Widgets para ingresar datos
