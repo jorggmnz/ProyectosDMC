@@ -29,7 +29,7 @@ st.sidebar.image("DMC.png", width=100)
 modulos = st.sidebar.selectbox ("Selecione un módulo", ["Ejercicio 1: Listas", "Ejercicio 2: Arreglos con Numpy", "Ejercicio 3: Funciones", "Ejercicio 4: CRUD"])
 
 if modulos == "Ejercicio 1: Listas":
-  
+
   st.write("Bienvenido al módulo Listas")
   st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
 
@@ -37,6 +37,8 @@ concepto = st.text_input("Concepto")
 tipo = st.selectbox("Tipo de movimiento", ["Ingresos", "Gastos"])  
 valor = st.number_input("Valor", min_value=0.0)
 
-
+  if st.buttom("Movimiento"):
+  lista_ingresos = list(range(int(valor_inicial), int(valor_final)))
+  st.write(lista_ingresos)
   
 
