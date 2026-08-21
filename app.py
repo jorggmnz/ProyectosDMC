@@ -27,7 +27,7 @@ st.sidebar.image("DMC.png", width=100)
 
 modulos = st.sidebar.selectbox ("Selecione un módulo", ["Ejercicio 1: Listas", "Ejercicio 2: Arreglos con Numpy", "Ejercicio 3: Funciones", "Ejercicio 4: CRUD"])
 
-if modulos == "Módulo Listas":
+if modulos == "Ejercicio 1: Listas":
   
   st.write("Bienvenido al módulo Listas")
   
@@ -37,7 +37,7 @@ if modulos == "Módulo Listas":
   lista_numeros = list(range(int(valor_inicial), int(valor_final)))
   st.write(lista_numeros)
   
-elif modulos == "Módulo Arreglos":
+elif modulos == "Ejercicio 2: Arreglos":
   
   st.write("Bienvenido al módulo de Arreglos")
   
@@ -46,4 +46,4 @@ elif modulos == "Módulo Arreglos":
   st.write(cantidad_arreglo)
 else:
   
-  st.write("Bienvenido al módulo de Funciones")
+  st.write("Bienvenido al módulo de Ejercicio 3: Funciones")
