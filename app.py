@@ -35,7 +35,8 @@ if modulos == "Ejercicio 1: Listas":
 
 concepto = st.number_input("Concepto")
 tipo = st.selectbox("Tipo de movimiento", ["Ingreso", "Gasto"])
-  Descripción breve
+  
+  #Descripción breve
   Ingresos = st.number_input("Ingresos")
   Gastos = st.number_input("Gastos")
 valor = st.number_input("Valor", min_value=0.0)
