@@ -33,8 +33,8 @@ if modulos == "Ejercicio 1: Listas":
   st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
 
   # Descripción breve
-  valor_inicial = st.number_input("Ingrese el valor inicial")
-  valor_final = st.number_input("Ingrese el valor final")
+  Ingresos = st.number_input("Ingresos")
+  Gastos = st.number_input("Gastos")
   
 elif modulos == "Ejercicio 2: Arreglos":
   
