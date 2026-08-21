@@ -53,8 +53,8 @@ valor = st.number_input("Valor", min_value=0.0)
         #st.error("El flujo de caja está EN CONTRA")
 
   # Descripción breve
-  Ingresos = st.number_input("Ingresos")
-  Gastos = st.number_input("Gastos")
+  #Ingresos = st.number_input("Ingresos")
+  #Gastos = st.number_input("Gastos")
   
 elif modulos == "Ejercicio 2: Arreglos":
   
