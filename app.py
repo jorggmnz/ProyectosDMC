@@ -30,12 +30,13 @@ modulos = st.sidebar.selectbox ("Selecione un módulo", ["Ejercicio 1: Listas", 
 
 if modulos == "Ejercicio 1: Listas":
 
-  st.write("Bienvenido al módulo Listas")
-  st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
+    st.write("Bienvenido al módulo Listas")
+    st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
 
-concepto = st.text_input("Concepto")
-tipo = st.selectbox("Tipo de movimiento", ["Ingresos", "Gastos"])  
-valor = st.number_input("Valor", min_value=0.0)
+    # Estas 3 líneas AHORA SÍ tienen sangría y están dentro del IF
+    concepto = st.text_input("Concepto")
+    tipo = st.selectbox("Tipo de movimiento", ["Ingresos", "Gastos"])
+    valor = st.number_input("Valor", min_value=0.0)
 
 elif modulos == "Ejercicio 2: Arreglos con Numpy":
     
@@ -61,14 +62,13 @@ elif modulos == "Ejercicio 2: Arreglos con Numpy":
 
     # 4. Botón para agregar
     if st.button("Agregar producto"):
-        # Usamos np.append() para agregar elementos a cada arreglo de NumPy
         st.session_state.nombres = np.append(st.session_state.nombres, nombre)
         st.session_state.categorias = np.append(st.session_state.categorias, categoria)
         st.session_state.precios = np.append(st.session_state.precios, precio)
         st.session_state.cantidades = np.append(st.session_state.cantidades, cantidad)
         st.session_state.totales = np.append(st.session_state.totales, total)
 
-    # 5. Convertir los arreglos de NumPy en un diccionario y luego en DataFrame
+    # 5. Convertir a DataFrame
     datos = {
         "Producto": st.session_state.nombres,
         "Categoría": st.session_state.categorias,
@@ -81,4 +81,10 @@ elif modulos == "Ejercicio 2: Arreglos con Numpy":
 
     # 6. Mostrar la tabla actualizada
     st.dataframe(df_productos)
+
+elif modulos == "Ejercicio 3: Funciones":
+    st.write("Bienvenido al módulo Funciones")
+
+elif modulos == "Ejercicio 4: CRUD":
+    st.write("Bienvenido al módulo CRUD")
 
