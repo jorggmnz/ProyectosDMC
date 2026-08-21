@@ -7,6 +7,9 @@ st.write("Elaborado por: Jorge Enrique Muñoz Ccasa")
 st.write("Módulo: N°1 de Python Fundamentals")
 st.write("Año: 2026")
 
+# Separador visual
+st.divider()
+
 st.image("Python_logo.png", width=200)
 st.sidebar.image("DMC.png", width=100)
 
