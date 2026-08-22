@@ -33,16 +33,16 @@ if modulos == "Ejercicio 1: Listas":
     st.write("Bienvenido al módulo Listas")
     st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
 
-    # 1. Inicializar la lista en memoria si aún no existe
+    #1 Inicializar la lista en memoria si aún no existe
     if "movimientos" not in st.session_state:
         st.session_state.movimientos = []
 
-    # 2. Widgets de entrada de datos
+    #2 Movimientos
     concepto = st.text_input("Concepto")
     tipo = st.selectbox("Tipo de movimiento", ["Ingresos", "Gastos"])
     valor = st.number_input("Valor", min_value=0.0)
 
-    # 3. Botón para guardar el movimiento en la lista
+    #3 Botón
     if st.button("Agregar movimiento"):
         st.session_state.movimientos.append({
             "Concepto": concepto,
@@ -50,7 +50,7 @@ if modulos == "Ejercicio 1: Listas":
             "Valor": valor
         })
 
-    # 4. Mostrar la tabla con los registros agregados
+    #4 Tabla de registros
     st.dataframe(pd.DataFrame(st.session_state.movimientos))
 
     # 5. Calcular totales de Ingresos y Gastos usando for e if
