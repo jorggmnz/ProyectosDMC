@@ -33,10 +33,41 @@ if modulos == "Ejercicio 1: Listas":
     st.write("Bienvenido al módulo Listas")
     st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
 
-    # Estas 3 líneas AHORA SÍ tienen sangría y están dentro del IF
+    # 1. Inicializar la lista en memoria si aún no existe
+    if "movimientos" not in st.session_state:
+        st.session_state.movimientos = []
+
+    # 2. Widgets de entrada de datos
     concepto = st.text_input("Concepto")
     tipo = st.selectbox("Tipo de movimiento", ["Ingresos", "Gastos"])
     valor = st.number_input("Valor", min_value=0.0)
+
+    # 3. Botón para guardar el movimiento en la lista
+    if st.button("Agregar movimiento"):
+        st.session_state.movimientos.append({
+            "Concepto": concepto,
+            "Tipo": tipo,
+            "Valor": valor
+        })
+
+    # 4. Mostrar la tabla con los registros agregados
+    st.dataframe(pd.DataFrame(st.session_state.movimientos))
+
+    # 5. Calcular totales de Ingresos y Gastos usando for e if
+    total_ingresos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Ingresos")
+    total_gastos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Gastos")
+    saldo = total_ingresos - total_gastos
+
+    # 6. Mostrar métricas de resultados
+    st.metric("Total Ingresos", f"${total_ingresos:,.2f}")
+    st.metric("Total Gastos", f"${total_gastos:,.2f}")
+    st.metric("Saldo Final", f"${saldo:,.2f}")
+
+    # 7. Indicador del estado del flujo de caja
+    if saldo >= 0:
+        st.success("El flujo de caja está A FAVOR")
+    else:
+        st.error("El flujo de caja está EN CONTRA")
 
 elif modulos == "Ejercicio 2: Arreglos con Numpy":
     
