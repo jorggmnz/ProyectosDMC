@@ -120,14 +120,6 @@ elif modulos == "Ejercicio 3: Funciones":
     st.write("Bienvenido al módulo Funciones")
     st.markdown("Calcula la rentabilidad esperada de tu inversión.")
 
-    # 1. Función simple de cálculo
-    def calcular_rentabilidad(capital, utilidad):
-        if capital > 0:
-            rentabilidad = (utilidad / capital) * 100
-            return round(rentabilidad, 2)
-        else:
-            return 0.0
-
     #Inicio
     if "historial_funciones" not in st.session_state:
         st.session_state.historial_funciones = []
@@ -139,10 +131,9 @@ elif modulos == "Ejercicio 3: Funciones":
 
     #Boton
     if st.button("Calcular Rentabilidad"):
-        resultado = lf.rentabilidad_esperada(utilidad, capital)
-        st.success(f"La rentabilidad esperada es de: {resultado}%")
+        salida = lf.calcular_rentabilidad_esperada(capital_invertido=capital, utilidad_esperada=utilidad)
+        resultado = salida["rentabilidad_esperada_pct"]
 
-      
         st.session_state.historial_funciones.append({
             "Proyecto": proyecto,
             "Capital": capital,
