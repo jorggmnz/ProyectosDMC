@@ -139,7 +139,7 @@ elif modulos == "Ejercicio 3: Funciones":
 
     #Boton
     if st.button("Calcular Rentabilidad"):
-        resultado = lf.calcular_rentabilidad(capital, utilidad)
+        resultado = lf.rentabilidad(utilidad, capital)
         st.success(f"La rentabilidad esperada es de: {resultado}%")
 
       
