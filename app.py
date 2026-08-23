@@ -35,7 +35,7 @@ if modulos == "Ejercicio 1: Listas":
     st.write("Bienvenido al módulo Listas")
     st.markdown("Registra tus ingresos y gastos")
 
-    #1 Inicializar la lista en memoria si aún no existe
+    #1 Inicio
     if "movimientos" not in st.session_state:
         st.session_state.movimientos = []
 
@@ -44,22 +44,18 @@ if modulos == "Ejercicio 1: Listas":
     tipo = st.selectbox("Tipo de movimiento", ["Ingresos", "Gastos"])
     valor = st.number_input("Valor", min_value=0.0)
 
-    #3 Botón
+    #3 Creacion de boton movimiento
     if st.button("Agregar movimiento"):
         st.session_state.movimientos.append({
             "Concepto": concepto,
             "Tipo": tipo,
             "Valor": valor
         })
-    if st.button("Limpiar lista"):
-        st.session_state.movimientos.lista = []
-        st.info("🗑️ Lista limpiada con éxito.")
 
-  
-    #4 Tabla de registros
+    #4 Tabla
     st.dataframe(pd.DataFrame(st.session_state.movimientos))
 
-    # 5. Calcular totales de Ingresos y Gastos usando for e if
+    # 5. Calculo de Ingresos y Gastos
     total_ingresos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Ingresos")
     total_gastos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Gastos")
     saldo = total_ingresos - total_gastos
@@ -73,16 +69,16 @@ if modulos == "Ejercicio 1: Listas":
     if saldo > 0:
         st.success("El flujo de caja está A FAVOR")
     elif saldo == 0:
-        st.success("El flujo de caja está no está ni A FAVOR NI EN CONTRA")
+        st.success("El flujo de caja no está ni A FAVOR NI EN CONTRA")
     else:
         st.error("El flujo de caja está EN CONTRA")
 
 elif modulos == "Ejercicio 2: Arreglos con Numpy":
     
     st.write("Bienvenido al módulo Arreglos con Numpy")
-    st.markdown("Registra productos para calcular su total acumulado usando arreglos de NumPy.")
+    st.markdown("Registro productos usando arreglos de NumPy.")
 
-    # 1. Inicializar los arreglos en session_state si no existen
+    #Inicio
     if "nombres" not in st.session_state:
         st.session_state.nombres = np.array([], dtype=str)
         st.session_state.categorias = np.array([], dtype=str)
@@ -90,16 +86,15 @@ elif modulos == "Ejercicio 2: Arreglos con Numpy":
         st.session_state.cantidades = np.array([], dtype=int)
         st.session_state.totales = np.array([], dtype=float)
 
-    # 2. Formulario de ingreso de datos
+    #Formulario
     nombre = st.text_input("Nombre del producto")
-    categoria = st.selectbox("Categoría", ["Electrónica", "Ropa", "Alimentos", "Hogar"])
+    categoria = st.selectbox("Categoría", ["Ropa", "Alimentos", "Electrodomésticos"])
     precio = st.number_input("Precio ($)", min_value=0.0)
     cantidad = st.number_input("Cantidad", min_value=1, step=1)
 
-    # 3. Cálculo automático del total
     total = precio * cantidad
 
-    # 4. Botón para agregar
+    #Botn
     if st.button("Agregar producto"):
         st.session_state.nombres = np.append(st.session_state.nombres, nombre)
         st.session_state.categorias = np.append(st.session_state.categorias, categoria)
@@ -107,7 +102,7 @@ elif modulos == "Ejercicio 2: Arreglos con Numpy":
         st.session_state.cantidades = np.append(st.session_state.cantidades, cantidad)
         st.session_state.totales = np.append(st.session_state.totales, total)
 
-    # 5. Convertir a DataFrame
+    #Dataframee
     datos = {
         "Producto": st.session_state.nombres,
         "Categoría": st.session_state.categorias,
@@ -118,7 +113,7 @@ elif modulos == "Ejercicio 2: Arreglos con Numpy":
     
     df_productos = pd.DataFrame(datos)
 
-    # 6. Mostrar la tabla actualizada
+    #Tabla con actualizaciones
     st.dataframe(df_productos)
 
 elif modulos == "Ejercicio 3: Funciones":
