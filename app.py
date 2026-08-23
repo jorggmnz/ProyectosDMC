@@ -51,7 +51,11 @@ if modulos == "Ejercicio 1: Listas":
             "Tipo": tipo,
             "Valor": valor
         })
+    if st.button("Limpiar lista"):
+        st.session_state.movimientos.lista = []
+        st.info("🗑️ Lista limpiada con éxito.")
 
+  
     #4 Tabla de registros
     st.dataframe(pd.DataFrame(st.session_state.movimientos))
 
