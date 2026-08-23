@@ -37,7 +37,7 @@ if modulos == "Ejercicio 1: Listas":
 
     #1 Inicializar la lista en memoria si aún no existe
     if "movimientos" not in st.session_state:
-        st.session_state.movimientos = MovimientoListas()
+        st.session_state.movimientos = []
 
     #2 Movimientos
     concepto = st.text_input("Concepto")
