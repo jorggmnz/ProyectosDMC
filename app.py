@@ -117,6 +117,45 @@ elif modulos == "Ejercicio 2: Arreglos con Numpy":
 
 elif modulos == "Ejercicio 3: Funciones":
     st.write("Bienvenido al módulo Funciones")
+    st.markdown("Calcula la rentabilidad esperada de tu inversión.")
+
+    # 1. Función simple de cálculo
+    def calcular_rentabilidad(capital, utilidad):
+        if capital > 0:
+            rentabilidad = (utilidad / capital) * 100
+            return round(rentabilidad, 2)
+        else:
+            return 0.0
+
+    # 2. Inicializar la lista del historial
+    if "historial_funciones" not in st.session_state:
+        st.session_state.historial_funciones = []
+
+    # 3. Entradas de datos
+    proyecto = st.text_input("Nombre del proyecto", value="Proyecto 1")
+    capital = st.number_input("Capital invertido ($)", min_value=0.0, value=1000.0)
+    utilidad = st.number_input("Utilidad esperada ($)", min_value=0.0, value=150.0)
+
+    # 4. Botón y cálculo
+    if st.button("Calcular Rentabilidad"):
+        # Llamamos a la función
+        resultado = calcular_rentabilidad(capital, utilidad)
+
+        # Mostrar el resultado en pantalla
+        st.success(f"La rentabilidad esperada es de: {resultado}%")
+
+        # Guardar en el historial
+        st.session_state.historial_funciones.append({
+            "Proyecto": proyecto,
+            "Capital": capital,
+            "Utilidad": utilidad,
+            "Rentabilidad (%)": resultado
+        })
+
+    # 5. Mostrar la tabla del historial
+    st.subheader("Histórico de resultados")
+    df_resultado = pd.DataFrame(st.session_state.historial_funciones)
+    st.dataframe(df_resultado)
 
 elif modulos == "Ejercicio 4: CRUD":
     st.write("Bienvenido al módulo CRUD")
