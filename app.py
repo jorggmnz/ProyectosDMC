@@ -136,8 +136,8 @@ elif modulos == "Ejercicio 3: Funciones":
 
         st.session_state.historial_funciones.append({
             "Proyecto": proyecto,
-            "Capital": capital,
-            "Utilidad": utilidad,
+            "Capital": capital_invertido,
+            "Utilidad": utilidad_esperada,
             "Rentabilidad (%)": resultado
         })
 
