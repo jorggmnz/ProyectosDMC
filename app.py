@@ -66,8 +66,10 @@ if modulos == "Ejercicio 1: Listas":
     st.metric("Saldo Final", f"${saldo:,.2f}")
 
     # 7. Indicador del estado del flujo de caja
-    if saldo >= 0:
+    if saldo > 0:
         st.success("El flujo de caja está A FAVOR")
+    elif saldo = 0:
+        st.success("El flujo de caja está no está ni A FAVOR NI EN CONTRA")
     else:
         st.error("El flujo de caja está EN CONTRA")
 
