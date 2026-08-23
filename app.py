@@ -1,6 +1,8 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
+import librería_funciones_proyecto1 as lf
+
 
 st.title("Proyecto aplicado N°1")
 st.write("Módulo: N°1 de Python Fundamentals")
