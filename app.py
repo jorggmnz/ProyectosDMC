@@ -126,12 +126,12 @@ elif modulos == "Ejercicio 3: Funciones":
 
     #Datos
     proyecto = st.text_input("Nombre del proyecto", value="Proyecto 1")
-    capital = st.number_input("Capital invertido ($)", min_value=0.0, value=1000.0)
-    utilidad = st.number_input("Utilidad esperada ($)", min_value=0.0, value=150.0)
+    capital_invertido = st.number_input("Capital invertido", min_value=0.0, value=1000.0)
+    utilidad_esperada = st.number_input("Utilidad esperada", min_value=0.0, value=150.0)
 
     #Boton
     if st.button("Calcular Rentabilidad"):
-        salida = lf.calcular_rentabilidad_esperada(capital_invertido=capital, utilidad_esperada=utilidad)
+        salida = lf.calcular_rentabilidad_esperada(capital_invertido, utilidad_esperada)
         resultado = salida["rentabilidad_esperada_pct"]
 
         st.session_state.historial_funciones.append({
