@@ -60,7 +60,6 @@ if modulos == "Ejercicio 1: Listas":
     total_gastos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Gastos")
     saldo = total_ingresos - total_gastos
 
-    # 6. Mostrar métricas de resultados
     st.metric("Total Ingresos", f"${total_ingresos:,.2f}")
     st.metric("Total Gastos", f"${total_gastos:,.2f}")
     st.metric("Saldo Final", f"${saldo:,.2f}")
@@ -171,7 +170,7 @@ elif modulos == "Ejercicio 4: CRUD":
         st.session_state.productos_crud = []
 
     # 3. Solapas para C, R, U, D
-    tab1, tab2, tab3, tab4 = st.tabs(["Crear", "Leer", "Actualizar", "Eliminar"])
+    tab1, tab2, tab3, tab4 = st.tabs(["Create", "Read", "Update", "Delete"])
 
     # CREAR
     with tab1:
@@ -225,4 +224,3 @@ elif modulos == "Ejercicio 4: CRUD":
                 st.rerun()
         else:
             st.info("No hay productos")
-
