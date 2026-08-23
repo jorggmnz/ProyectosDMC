@@ -33,11 +33,11 @@ modulos = st.sidebar.selectbox ("Selecione un módulo", ["Ejercicio 1: Listas", 
 if modulos == "Ejercicio 1: Listas":
 
     st.write("Bienvenido al módulo Listas")
-    st.markdown("Registra tus ingresos y gastos para calcular el saldo final.")
+    st.markdown("Registra tus ingresos y gastos")
 
     #1 Inicializar la lista en memoria si aún no existe
     if "movimientos" not in st.session_state:
-        st.session_state.movimientos = []
+        st.session_state.movimientos = MovimientoListas()
 
     #2 Movimientos
     concepto = st.text_input("Concepto")
