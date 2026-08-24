@@ -20,14 +20,14 @@ modulos = st.sidebar.selectbox ("Selecione un módulo", ["Home","Ejercicio 1: Li
 
 if modulos == "Home":
 
-st.subheader("Información General del Estudiante")
-st.write("**Elaborado por:** Jorge Enrique Muñoz Ccasa")
-st.write("**Carrera:** Estadística")
-st.write("**Universidad:** Universidad Nacional Mayor de San Marcos")
+  st.subheader("Información General del Estudiante")
+  st.write("**Elaborado por:** Jorge Enrique Muñoz Ccasa")
+  st.write("**Carrera:** Estadística")
+  st.write("**Universidad:** Universidad Nacional Mayor de San Marcos")
 
-st.divider()
+  st.divider()
 
-st.markdown("""Esta aplicación permite poner en practica todo lo aprendido y desarrollado en las primeras clases
+  st.markdown("""Esta aplicación permite poner en practica todo lo aprendido y desarrollado en las primeras clases
 del módulo 1 Python for Analytics 
                 Las tecnologías empleadas en este proyecto son Github, Streamlit y Python""") 
 
