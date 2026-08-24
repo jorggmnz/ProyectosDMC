@@ -55,7 +55,7 @@ elif modulos == "Ejercicio 1: Listas":
     #4 Tabla
     st.dataframe(pd.DataFrame(st.session_state.movimientos))
 
-    # 5. Calculo de Ingresos y Gastos
+    #5 Calculo de Ingresos y Gastos
     total_ingresos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Ingresos")
     total_gastos = sum(m["Valor"] for m in st.session_state.movimientos if m["Tipo"] == "Gastos")
     saldo = total_ingresos - total_gastos
@@ -64,7 +64,7 @@ elif modulos == "Ejercicio 1: Listas":
     st.metric("Total Gastos", f"${total_gastos:,.2f}")
     st.metric("Saldo Final", f"${saldo:,.2f}")
 
-    # 7. Indicador del estado del flujo de caja
+    #6 Flujo de caja
     if saldo > 0:
         st.success("El flujo de caja está A FAVOR")
     elif saldo == 0:
@@ -147,7 +147,7 @@ elif modulos == "Ejercicio 3: Funciones":
 
 elif modulos == "Ejercicio 4: CRUD":
     st.write("Bienvenido al módulo CRUD")
-    # 1. Clase reducida al mínimo
+    # Clases
     class InventarioProducto:
         def __init__(self, nombre, costo, precio, stock):
             self.nombre = nombre
@@ -165,14 +165,14 @@ elif modulos == "Ejercicio 4: CRUD":
                 "Margen Unitario": self.precio - self.costo
             }
 
-    # 2. Inicializar la lista en session_state
+    #Inicio
     if "productos_crud" not in st.session_state:
         st.session_state.productos_crud = []
 
-    # 3. Solapas para C, R, U, D
+    #PRIMERSO PASOS CRUD
     tab1, tab2, tab3, tab4 = st.tabs(["Create", "Read", "Update", "Delete"])
 
-    # CREAR
+    #CREAR
     with tab1:
         st.subheader("Agregar Producto")
         nom = st.text_input("Nombre")
@@ -185,7 +185,7 @@ elif modulos == "Ejercicio 4: CRUD":
             st.session_state.productos_crud.append(obj)
             st.success(f"Producto '{nom}' agregado")
 
-    # LEER
+    # READ (LEER)
     with tab2:
         st.subheader("Lista de Productos")
         if st.session_state.productos_crud:
@@ -194,7 +194,7 @@ elif modulos == "Ejercicio 4: CRUD":
         else:
             st.info("No hay productos")
 
-    # ACTUALIZAR
+    # UPDATE (ACTUALIZAR)
     with tab3:
         st.subheader("Modificar Stock")
         if st.session_state.productos_crud:
@@ -209,7 +209,7 @@ elif modulos == "Ejercicio 4: CRUD":
         else:
             st.info("No hay productos")
 
-    # ELIMINAR
+    #DELETE (ELIMINAR)
     with tab4:
         st.subheader("Eliminar Producto")
         if st.session_state.productos_crud:
