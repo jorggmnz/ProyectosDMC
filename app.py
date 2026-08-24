@@ -31,7 +31,7 @@ st.markdown("""Esta aplicación permite poner en practica todo lo aprendido y de
 del módulo 1 Python for Analytics 
                 Las tecnologías empleadas en este proyecto son Github, Streamlit y Python""") 
 
-if modulos == "Ejercicio 1: Listas":
+elif modulos == "Ejercicio 1: Listas":
 
     st.write("Bienvenido al módulo Listas")
     st.markdown("Registra tus ingresos y gastos")
