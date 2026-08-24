@@ -13,12 +13,11 @@ st.divider()
 
 st.image("Python_logo.png", width=200)
 st.sidebar.image("DMC.png", width=100)
+st.sidebar.title("Parámetros")
 
 modulos = st.sidebar.selectbox ("Selecione un módulo", ["Home","Ejercicio 1: Listas", "Ejercicio 2: Arreglos con Numpy", "Ejercicio 3: Funciones", "Ejercicio 4: CRUD"])
 
 if modulos == "Home":
-
-  st.sidebar.title("Parámetros")
 
   st.subheader("Información General del Estudiante")
   st.write("**Elaborado por:** Jorge Enrique Muñoz Ccasa")
