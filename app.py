@@ -4,6 +4,11 @@ import pandas as pd
 import librería_funciones_proyecto1 as lf
 
 
+st.title("Proyecto aplicado N°1")
+st.write("Módulo: N°1 de Python Fundamentals")
+st.write("Año: 2026")
+
+st.sidebar.title("Parámetros")
 
 # Separador visual
 st.divider()
@@ -14,13 +19,6 @@ st.sidebar.image("DMC.png", width=100)
 modulos = st.sidebar.selectbox ("Selecione un módulo", ["Home","Ejercicio 1: Listas", "Ejercicio 2: Arreglos con Numpy", "Ejercicio 3: Funciones", "Ejercicio 4: CRUD"])
 
 if modulos == "Home":
- 
-
-st.title("Proyecto aplicado N°1")
-st.write("Módulo: N°1 de Python Fundamentals")
-st.write("Año: 2026")
-
-st.sidebar.title("Parámetros")
 
 st.subheader("Información General del Estudiante")
 st.write("**Elaborado por:** Jorge Enrique Muñoz Ccasa")
