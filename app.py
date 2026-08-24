@@ -5,6 +5,17 @@ import librería_funciones_proyecto1 as lf
 
 
 
+# Separador visual
+st.divider()
+
+st.image("Python_logo.png", width=200)
+st.sidebar.image("DMC.png", width=100)
+
+modulos = st.sidebar.selectbox ("Selecione un módulo", ["Home","Ejercicio 1: Listas", "Ejercicio 2: Arreglos con Numpy", "Ejercicio 3: Funciones", "Ejercicio 4: CRUD"])
+
+if modulos == "Home":
+ 
+
 st.title("Proyecto aplicado N°1")
 st.write("Módulo: N°1 de Python Fundamentals")
 st.write("Año: 2026")
@@ -20,15 +31,7 @@ st.divider()
 
 st.markdown("""Esta aplicación permite poner en practica todo lo aprendido y desarrollado en las primeras clases
 del módulo 1 Python for Analytics 
-                Las tecnologías empleadas en esto es""")
-
-# Separador visual
-st.divider()
-
-st.image("Python_logo.png", width=200)
-st.sidebar.image("DMC.png", width=100)
-
-modulos = st.sidebar.selectbox ("Selecione un módulo", ["Ejercicio 1: Listas", "Ejercicio 2: Arreglos con Numpy", "Ejercicio 3: Funciones", "Ejercicio 4: CRUD"])
+                Las tecnologías empleadas en este proyecto son Github, Streamlit y Python""") 
 
 if modulos == "Ejercicio 1: Listas":
 
